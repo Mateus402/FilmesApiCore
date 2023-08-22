@@ -26,15 +26,10 @@ Este é um projeto desenvolvido em .NET Core que demonstra a implementação de 
 
 ## 🧑‍💻Tecnologias Utilizadas:
 ``.NET CORE``
-<br>
 ``ENTITY FRAMEWORK``
-<br>
 ``AUTOMAPPER``
-<br>
 ``NPGSQL``
-<br>
 ``POSTGRESQL``
-<br>
 ``DOCKER``
 
 <br>
