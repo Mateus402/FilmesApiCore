@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddEntityFrameworkNpgsql()
-  .AddDbContext<FilmeContext>(opts => opts.UseNpgsql("User ID=postgres;Password=123;Host=host.docker.internal;Port=5432;Database=curso_alura;"));
+  .AddDbContext<FilmeContext>(opts => opts.UseNpgsql("User ID=postgres;Password=s3nh4;Host=host.docker.internal;Port=5432;Database=curso_alura;"));
 
 var app = builder.Build();
 
