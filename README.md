@@ -25,11 +25,11 @@ Este é um projeto desenvolvido em .NET Core que demonstra a implementação de 
 ![Imagem da tela do Swagger](image.png)
 
 ## 🧑‍💻Tecnologias Utilizadas:
-``.NET CORE``
-``ENTITY FRAMEWORK``
-``AUTOMAPPER``
-``NPGSQL``
-``POSTGRESQL``
+``.NET CORE`` |
+``ENTITY FRAMEWORK`` |
+``AUTOMAPPER`` |
+``NPGSQL`` |
+``POSTGRESQL`` |
 ``DOCKER``
 
 <br>
