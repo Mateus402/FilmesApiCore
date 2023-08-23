@@ -35,7 +35,7 @@ namespace FilmesApi.Controllers
       _context.Sessoes.Add(sessao);
       _context.SaveChanges();
       return CreatedAtAction(nameof(GetSessaoById),
-        new { id = sessao.Id },
+        new { filmeId = sessao.FilmeId, cinemaId = sessao.CinemaId },
         sessao);
     }
 
@@ -56,29 +56,29 @@ namespace FilmesApi.Controllers
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpGet("{id}")]
-    public IActionResult GetSessaoById(int id)
+    [HttpGet("{filmeId}/{cinemaId}")]
+    public IActionResult GetSessaoById(int filmeId, int cinemaId)
     {
       var sessao = _context.Sessoes
-        .FirstOrDefault(sessao => sessao.Id == id);
+        .FirstOrDefault(sessao => sessao.FilmeId == filmeId && sessao.CinemaId == cinemaId);
       if (sessao == null) return NotFound();
       var sessaoDto = _mapper.Map<ReadSessaoDto>(sessao);
       return Ok(sessaoDto);
     }
 
-    /// <summary>
-    /// Deleta uma Sessao pelo ID
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    [HttpDelete("{id}")]
-    public IActionResult DeleteSessao(int id)
-    {
-      var sessao = _context.Sessoes.FirstOrDefault(sessao => sessao.Id == id);
-      if (sessao == null) return NotFound();
-      _context.Remove(sessao);
-      _context.SaveChanges();
-      return NoContent();
-    }
+    ///// <summary>
+    ///// Deleta uma Sessao pelo ID
+    ///// </summary>
+    ///// <param name="id"></param>
+    ///// <returns></returns>
+    //[HttpDelete("{id}")]
+    //public IActionResult DeleteSessao(int id)
+    //{
+    //  var sessao = _context.Sessoes.FirstOrDefault(sessao => sessao.Id == id);
+    //  if (sessao == null) return NotFound();
+    //  _context.Remove(sessao);
+    //  _context.SaveChanges();
+    //  return NoContent();
+    //}
   }
 }
