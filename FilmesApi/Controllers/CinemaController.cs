@@ -28,6 +28,7 @@ namespace FilmesApi.Controllers
     /// </summary>
     /// <param name="cinemaDto">Objeto com os campos necessários para a criação de um Cinema</param>
     /// <returns></returns>
+    [HttpPost]
     public IActionResult AddCinema([FromBody] CreateCinemaDto cinemaDto)
     {
       Cinema cinema = _mapper.Map<Cinema>(cinemaDto);
@@ -75,32 +76,6 @@ namespace FilmesApi.Controllers
       var cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
       if (cinema == null) return NotFound();
       _mapper.Map(cinemaDto, cinema);
-      _context.SaveChanges();
-      return NoContent();
-    }
-
-    /// <summary>
-    /// Altera um Cinema pelo ID usando o PATCH
-    /// </summary>
-    /// <param name="id"></param>
-    /// <param name="patch">Particiona o JSON em partes para alterar somente o necessário</param>
-    /// <returns></returns>
-    [HttpPatch("{id}")]
-    public IActionResult UpdateCinemaPatch(int id, JsonPatchDocument<UpdateCinemaDto> patch)
-    {
-      var cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
-      if (cinema == null) return NotFound();
-
-      var cinemaUpdate = _mapper.Map<UpdateCinemaDto>(cinema);
-
-      patch.ApplyTo(cinemaUpdate, ModelState);
-
-      if (!TryValidateModel(cinemaUpdate))
-      {
-        return ValidationProblem(ModelState);
-      }
-
-      _mapper.Map(cinemaUpdate, cinema);
       _context.SaveChanges();
       return NoContent();
     }

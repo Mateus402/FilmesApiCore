@@ -26,8 +26,9 @@ namespace FilmesApi.Controllers
     /// <summary>
     /// Adiciona um Endereco
     /// </summary>
-    /// <param name="EnderecoDto">Objeto com os campos necessários para a criação de um Endereco</param>
+    /// <param name="enderecoDto">Objeto com os campos necessários para a criação de um Endereco</param>
     /// <returns></returns>
+    [HttpPost]
     public IActionResult AddEndereco([FromBody] CreateEnderecoDto enderecoDto)
     {
       Endereco endereco = _mapper.Map<Endereco>(enderecoDto);

@@ -9,10 +9,10 @@ namespace FilmesApi.Models
     public int Id { get; set; }
 
     [Required(ErrorMessage = "O Título do Filme é Obrigatório")]
-    public string Titulo { get; set; } = null!;
+    public string Titulo { get; set; }
 
     [Required(ErrorMessage = "O Gênero do Filme é Obrigatório")]
-    public string Genero { get; set; } = null!;
+    public string Genero { get; set; }
 
     [Required(ErrorMessage = "A Duração do Filme é Obrigatória!")]
     [Range(70, 600, ErrorMessage = "A Duração deve ter entre 70min a 600min")]

@@ -8,7 +8,7 @@ namespace FilmesApi.Models
     [Required]
     public int Id { get; set; }
     [Required(ErrorMessage = "O Nome do Cinema é Obrigatório")]
-    public string Nome { get; set; } = null!;
+    public string Nome { get; set; }
     public int EnderecoId { get; set; }
     public virtual Endereco Endereco { get; set; }
   }

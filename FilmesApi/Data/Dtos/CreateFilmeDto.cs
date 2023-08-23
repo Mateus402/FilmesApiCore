@@ -5,11 +5,11 @@ namespace FilmesApi.Data.Dtos
   public class CreateFilmeDto
   {
     [Required(ErrorMessage = "O Título do Filme é Obrigatório")]
-    public string Titulo { get; set; } = null!;
+    public string Titulo { get; set; }
 
     [Required(ErrorMessage = "O Gênero do Filme é Obrigatório")]
     [StringLength(50, ErrorMessage = "O tamanho não pode ultrapassar 50 caracteres")]
-    public string Genero { get; set; } = null!;
+    public string Genero { get; set; }
 
     [Required(ErrorMessage = "A Duração do Filme é Obrigatória!")]
     [Range(70, 600, ErrorMessage = "A Duração deve ter entre 70min a 600min")]

@@ -6,10 +6,11 @@ namespace FilmesApi.Profiles
 {
   public class EnderecoProfile : Profile
   {
-    protected EnderecoProfile()
+    public EnderecoProfile()
     {
       CreateMap<CreateEnderecoDto, Endereco>();
       CreateMap<UpdateEnderecoDto, Endereco>();
+      CreateMap<Endereco, UpdateEnderecoDto>();
       CreateMap<Endereco, ReadEnderecoDto>();
     }
   }
