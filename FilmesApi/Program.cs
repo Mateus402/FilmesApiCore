@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddEntityFrameworkNpgsql()
-  .AddDbContext<FilmeContext>(opts => opts.UseNpgsql(builder.Configuration.GetConnectionString("FilmeConnection")));
+  .AddDbContext<FilmeContext>(opts => opts.UseLazyLoadingProxies().UseNpgsql(builder.Configuration.GetConnectionString("FilmeConnection")));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

@@ -7,5 +7,7 @@ namespace FilmesApi.Data.Dtos
     public string Titulo { get; set; }
     public string Genero { get; set; }
     public int Duracao { get; set; }
+    public ICollection<ReadSessaoDto> Sessoes { get; set; }
+
   }
 }

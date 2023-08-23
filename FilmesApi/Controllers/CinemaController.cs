@@ -38,15 +38,13 @@ namespace FilmesApi.Controllers
     }
 
     /// <summary>
-    /// Busca todos os cinemas Paginado de 0 a 10
+    /// Busca todos os cinemas 
     /// </summary>
-    /// <param name="skip">Objeto que parametriza o Inicio da páginação</param>
-    /// <param name="take">Objeto que parametriza o Limite da páginação</param>
     /// <returns></returns>
     [HttpGet]
     public IEnumerable<ReadCinemaDto> GetCinemas([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-      return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.Skip(skip).Take(take));
+      return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
     }
 
     /// <summary>
