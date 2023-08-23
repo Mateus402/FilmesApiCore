@@ -97,12 +97,9 @@ namespace FilmesApi.Migrations
                     b.Property<int?>("CinemaId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("FilmeId1")
-                        .HasColumnType("integer");
-
                     b.HasKey("FilmeId", "CinemaId");
 
-                    b.HasIndex("FilmeId1");
+                    b.HasIndex("CinemaId");
 
                     b.ToTable("Sessoes");
                 });
@@ -122,13 +119,13 @@ namespace FilmesApi.Migrations
                 {
                     b.HasOne("FilmesApi.Models.Cinema", "Cinema")
                         .WithMany("Sessoes")
-                        .HasForeignKey("FilmeId")
+                        .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FilmesApi.Models.Filme", "Filme")
                         .WithMany("Sessoes")
-                        .HasForeignKey("FilmeId1")
+                        .HasForeignKey("FilmeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
