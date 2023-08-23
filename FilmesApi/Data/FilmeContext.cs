@@ -28,7 +28,7 @@ namespace FilmesApi.Data
       builder.Entity<Endereco>()
         .HasOne(endereco => endereco.Cinema)
         .WithOne(cinema => cinema.Endereco)
-        .OnDelete(deleteBehavior: DeleteBehavior.Restrict);
+        .OnDelete(DeleteBehavior.Restrict);
     }
 
     public DbSet<Filme> Filmes { get; set; }
